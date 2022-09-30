@@ -1,4 +1,4 @@
-package barath.springframework.sfgpetclinic.model;
+package barath.springframework.model;
 
 public class Person {
     private String firstName;
