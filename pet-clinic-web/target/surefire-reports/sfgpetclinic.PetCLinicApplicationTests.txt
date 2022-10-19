@@ -1,7 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: sfgpetclinic.PetCLinicApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.392 s <<< FAILURE! - in sfgpetclinic.PetCLinicApplicationTests
-sfgpetclinic.PetCLinicApplicationTests  Time elapsed: 0.39 s  <<< ERROR!
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.347 s <<< FAILURE! - in sfgpetclinic.PetCLinicApplicationTests
+sfgpetclinic.PetCLinicApplicationTests  Time elapsed: 0.344 s  <<< ERROR!
 java.lang.IllegalStateException: Unable to find a @SpringBootConfiguration, you need to use @ContextConfiguration or @SpringBootTest(classes=...) with your test
 
