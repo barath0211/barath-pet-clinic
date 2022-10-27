@@ -1,6 +1,7 @@
 package barath.springframework.services.map;
 
 import barath.springframework.model.BaseEntity;
+import barath.springframework.model.PetType;
 
 import java.util.*;
 
@@ -50,5 +51,9 @@ public abstract class AbstractMapService<T extends BaseEntity, ID extends Long> 
         }
 
         return nextId;
+    }
+
+    protected PetType save(PetType object) {
+        return null;
     }
 }
