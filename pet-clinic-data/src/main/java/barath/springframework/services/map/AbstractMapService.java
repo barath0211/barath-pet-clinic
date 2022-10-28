@@ -53,7 +53,7 @@ public abstract class AbstractMapService<T extends BaseEntity, ID extends Long> 
         return nextId;
     }
 
-    protected PetType save(PetType object) {
-        return null;
-    }
+//    protected PetType save(PetType object) {
+//        return null;
+//    }
 }

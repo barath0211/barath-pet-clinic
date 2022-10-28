@@ -1,13 +1,13 @@
 package barath.springframework.services.map;
 
 import barath.springframework.model.Speciality;
-import barath.springframework.services.SpecialtesService;
+import barath.springframework.services.SpecialityService;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
-public class SpecialityMapService extends AbstractMapService<Speciality, Long> implements SpecialtesService {
+public class SpecialityMapService extends AbstractMapService<Speciality, Long> implements SpecialityService {
     @Override
     public Set<Speciality> findAll() {
         return super.findAll();
