@@ -2,9 +2,11 @@ package barath.springframework.services.map;
 
 import barath.springframework.model.Visit;
 import barath.springframework.services.VisitService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class VisitMapService extends AbstractMapService<Visit, Long> implements VisitService {
 
     @Override
