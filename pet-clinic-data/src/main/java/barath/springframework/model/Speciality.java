@@ -1,23 +1,27 @@
 package barath.springframework.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import lombok.*;
 
+import javax.persistence.*;
+
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "specialities")
 public class Speciality extends  BaseEntity{
+    @ManyToOne
+    @JoinColumn(name = "saved_radiology_id")
     public static Speciality savedRadiology;
+    @ManyToOne
+    @JoinColumn(name = "saved_surgery_id")
     public static Speciality savedSurgery;
+    @ManyToOne
+    @JoinColumn(name = "saved_dentistry_id")
     public static Speciality savedDentistry;
     @Column(name = "description")
     private  String description;
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 }

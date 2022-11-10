@@ -12,5 +12,4 @@ class PetCLinicApplicationTests {
     @Test
     void contextLoads() {
     }
-
 }
