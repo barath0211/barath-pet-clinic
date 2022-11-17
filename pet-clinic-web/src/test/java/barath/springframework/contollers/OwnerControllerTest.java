@@ -85,7 +85,7 @@ class OwnerControllerTest {
 
         mockMvc.perform(get("/owners")
                         .param("lastName",""))
-                .andExpect(status().isOk())
+                .andExpect(status().is3xxRedirection())
                 .andExpect(view().name("owners/ownersList"))
                 .andExpect(model().attribute("selections", hasSize(2)));;
     }
