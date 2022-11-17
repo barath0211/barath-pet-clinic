@@ -45,6 +45,7 @@ class OwnerControllerTest {
                 .standaloneSetup(controller)
                 .build();
     }
+
     @Test
     void findOwners() throws Exception {
         mockMvc.perform(get("/owners/find"))
@@ -54,6 +55,7 @@ class OwnerControllerTest {
 
         verifyZeroInteractions(ownerService);
     }
+
     @Test
     void processFindFormReturnMany() throws Exception {
         when(ownerService.findAllByLastNameLike(anyString()))
@@ -65,6 +67,7 @@ class OwnerControllerTest {
                 .andExpect(view().name("owners/ownersList"))
                 .andExpect(model().attribute("selections", hasSize(2)));
     }
+
     @Test
     void processFindFormReturnOne() throws Exception {
         when(ownerService.findAllByLastNameLike(anyString())).thenReturn(Arrays.asList(Owner.builder().id(1l).build()));
@@ -73,6 +76,7 @@ class OwnerControllerTest {
                 .andExpect(status().is3xxRedirection())
                 .andExpect(view().name("redirect:/owners/1"));
     }
+
     @Test
     void processFindFormEmptyReturnMany() throws Exception {
         when(ownerService.findAllByLastNameLike(anyString()))
@@ -85,6 +89,7 @@ class OwnerControllerTest {
                 .andExpect(view().name("owners/ownersList"))
                 .andExpect(model().attribute("selections", hasSize(2)));;
     }
+
     @Test
     void displayOwner() throws Exception {
         when(ownerService.findById(anyLong())).thenReturn(Owner.builder().id(1l).build());
@@ -94,6 +99,8 @@ class OwnerControllerTest {
                 .andExpect(view().name("owners/ownerDetails"))
                 .andExpect(model().attribute("owner", hasProperty("id", is(1l))));
     }
+
+
     @Test
     void initCreationForm() throws Exception {
         mockMvc.perform(get("/owners/new"))
@@ -103,6 +110,7 @@ class OwnerControllerTest {
 
         verifyZeroInteractions(ownerService);
     }
+
     @Test
     void processCreationForm() throws Exception {
         when(ownerService.save(ArgumentMatchers.any())).thenReturn(Owner.builder().id(1l).build());
@@ -114,6 +122,7 @@ class OwnerControllerTest {
 
         verify(ownerService).save(ArgumentMatchers.any());
     }
+
     @Test
     void initUpdateOwnerForm() throws Exception {
         when(ownerService.findById(anyLong())).thenReturn(Owner.builder().id(1l).build());
@@ -125,6 +134,7 @@ class OwnerControllerTest {
 
         verifyZeroInteractions(ownerService);
     }
+
     @Test
     void processUpdateOwnerForm() throws Exception {
         when(ownerService.save(ArgumentMatchers.any())).thenReturn(Owner.builder().id(1l).build());
